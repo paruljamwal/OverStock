@@ -15,13 +15,15 @@ import Outdoor from './Pages/Outdoor';
 import Ideas from './Pages/Ideas';
 import Sales from './Pages/Sales';
 import LandingPage from '../src/Pages/Landing/LandingPage';
+import Product from './Pages/Products/Product';
 function App() {
   return (
     <div className="App">
        <Navbar/>
        {/* <LandingPage/> */}
+       <Product/>
        <Routes>
-        <Route path='/' element={<LandingPage/>}></Route>
+        <Route path='/hom' element={<LandingPage/>}></Route>
         <Route  path='/kids' element={<Kids/>} ></Route>
         <Route path='/furniture' element={<Furniture/>}></Route>
         <Route path='/rugs' element={<Rugs/>}></Route>

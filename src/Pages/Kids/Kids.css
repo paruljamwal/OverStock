@@ -1,0 +1,21 @@
+.leftbox{
+   width: 20%; 
+   border:1px green solid;
+   height: 350px;
+}
+
+.rightbox{
+    width: 78%;
+    margin-left: 2%;
+    border:1px blue solid;
+}
+.left{
+    margin: 25px;
+}
+.box{
+    display: flex;
+}
+
+.innerbox{
+    flex:1;
+}
