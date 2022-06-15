@@ -1,0 +1,8 @@
+.link{
+    text-decoration: none;
+    color: gray;
+}
+
+.link:nth-child(){
+    color: rgb(255,31,44);
+}

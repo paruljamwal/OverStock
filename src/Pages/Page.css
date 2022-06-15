@@ -1,0 +1,23 @@
+.gridbox{
+    width:80%
+}
+
+.gridName{
+    text-align: center;
+}
+.gridbox1{
+    width:100% ;
+}
+
+.gridName1{
+    text-align: center; 
+    font-size: larger;
+
+}
+.gridName2{
+    width: 95%;
+    color: gray;
+    font-size: large;
+    text-align: center;
+    justify-content: center;
+}
