@@ -1,7 +1,8 @@
 import React from "react";
-import { Grid, Limited, MainGrid, Poster, Poster2, MainGrid2, Poster4, MainGrid3 } from "./Pages.styled";
+import { Grid, Limited, MainGrid, Poster, Poster2, MainGrid2, Poster4, MainGrid3, Triplet, Flex, MainGrid4, Hori } from "./Pages.styled";
 import './Page.css'
-
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button'
 const LandingPage = () => {
   const data = [
     {
@@ -57,7 +58,16 @@ const LandingPage = () => {
     { image:"https://ak1.ostkcdn.com/img/mxc/C-Mod_HP_C_Mod_39032511.jpg?imwidth=1920",offer:"Extra 15% off",name:"Select Mattresses by Sealy"},
     { image:"https://ak1.ostkcdn.com/img/mxc/C-Mod_HP_C_Mod_27417542.jpg?imwidth=1920",offer:"Save On",name:"Select Home Goods By Bush Furniture"},
    ]
-  return (
+
+   const data4=[
+    {image:"https://ak1.ostkcdn.com/img/mxc/030822-SBS-Farmhouse.jpg?imwidth=1920",name:"Farnhouse",Way:"Country comforts abound in this take on rustic home decor."},
+    {image:"https://ak1.ostkcdn.com/img/mxc/030822-SBS-MidCenMod.jpg?imwidth=1920",name:"Retro meets modern chic in these clean lines and vibrant tones",Way:"Mid-Centuary Modern"},
+    {image:"https://ak1.ostkcdn.com/img/mxc/030822-SBS-Traditional.jpg?imwidth=1920",name:"Cozy designs, clean and classic, give this style it's signature appeal.",Way:"Traditional"},
+   ]
+
+   const data5=["Outdoor Rugs","Wallpaper","Patio Furniture","Mattresses","TV Stands","Outdoor Lighting","Outdoor Dining Sets","Mirrors","Portable air Conditionors","Bathroom Vanities","Computer Desks","Area Rugs"]
+
+   return (
     <div>
       <>
         <Poster src="https://ak1.ostkcdn.com/img/mxc/05302022-HP-A1-INTL-1400x550.jpg" />
@@ -113,6 +123,37 @@ const LandingPage = () => {
           </Grid>
         ))}
       </MainGrid3>
+      <Triplet>
+          
+          <img className="gridbox1" src='https://ak1.ostkcdn.com/img/mxc/030822-RIUpdate-Dsk.jpg?imwidth=3840'/>
+          <img className="gridbox2" src="https://ak1.ostkcdn.com/img/mxc/030822-RIUpdate-Dsk.svg?imwidth=1920" />
+      </Triplet>
+      <div>
+      <Limited>We've Got Your Style</Limited>
+       <Flex>
+        {data4.map((e)=>(
+          <div className="MainGrid3">
+            <img className="gridbox3"  src={e.image} alt="" />
+             <h3 className="grid3">{e.Way}</h3>
+             <p className="grid4" >{e.name}</p>
+          </div>
+        ))}
+       </Flex>
+      </div>
+      
+      <button variant="contained" className="btnstyle" >See all styles</button>
+    
+      <Limited>Trending Searches</Limited>
+      <MainGrid4>
+          {data5.map((e)=>(
+          <div className="grid5">
+            <h2 className="gray">{e}</h2>
+          </div>
+            
+          ))}
+      </MainGrid4>
+
+       <Hori></Hori>
     </div>
   );
 };

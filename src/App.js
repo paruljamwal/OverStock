@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import {Routes,Route} from 'react-router-dom'
-import Kids from './Pages/Kids';
+import Kids from '../src/Pages/Kids/Kids';
 import Furniture from './Pages/Furniture';
 import Rugs from './Pages/Rugs';
 import Decor from './Pages/Decor';
@@ -14,7 +14,7 @@ import More from './Pages/More';
 import Outdoor from './Pages/Outdoor';
 import Ideas from './Pages/Ideas';
 import Sales from './Pages/Sales';
-import LandingPage from './Pages/LandingPage';
+import LandingPage from '../src/Pages/Landing/LandingPage';
 function App() {
   return (
     <div className="App">

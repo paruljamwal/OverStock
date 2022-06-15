@@ -70,3 +70,30 @@ export const MainGrid3=styled.div`
  margin: 2%;
 
 `;
+
+export const Triplet=styled.div`
+   width:90%;
+   margin: 15% 5% 0% 5%;
+`;
+
+export const Flex=styled.div`
+   display:flex;
+   width: 95%;
+   margin: auto;
+   background-color:rgb(238, 238, 238);
+`;
+
+export const MainGrid4=styled.div`
+   display: grid;
+   grid-template-columns:repeat(3,1fr);
+   width:95%;
+   margin: auto;
+   
+`;
+
+export const Hori=styled.hr`
+color: lightgrey;
+margin: 2% 0% 2% 0%;
+
+`;
+
