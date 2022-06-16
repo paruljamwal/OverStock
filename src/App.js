@@ -19,13 +19,15 @@ import Product from './Pages/Products/Product';
 import Detail from './Pages/Details/Details';
 import Cart from './Pages/Cart/Cart';
 import Sign from './Pages/Sign/Sign';
+import CheckOut from './Pages/CheckOut/CheckOut';
 
 
 function App() {
   return (
     <div className="App">
-       <Navbar/>
-       <Sign/>
+       {/* <Navbar/> */}
+       <CheckOut/>
+       {/* <Sign/> */}
        {/* <Cart/> */}
        {/* <Detail/> */}
        {/* <Product/> */}
