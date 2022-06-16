@@ -16,12 +16,16 @@ import Ideas from './Pages/Ideas';
 import Sales from './Pages/Sales';
 import LandingPage from '../src/Pages/Landing/LandingPage';
 import Product from './Pages/Products/Product';
+import Detail from './Pages/Details/Details';
 import Cart from './Pages/Cart/Cart';
+
+
 function App() {
   return (
     <div className="App">
        <Navbar/>
        <Cart/>
+       {/* <Detail/> */}
        {/* <Product/> */}
        {/* <LandingPage/> */}
        {/* <Product/> */}
