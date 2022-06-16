@@ -6,11 +6,17 @@ export const GET_PRODUCTS_DATA = "GET_PRODUCTS_DATA";
 const getProducts = (payload)=>(
     {
         type:GET_PRODUCTS_DATA,
-        payload
+        payload:payload
+    }
+)
+const loadingproduct = ()=>(
+    {
+        type:"PRODUCT_LOADING"
     }
 )
 
 
-export const getData = ()=>(dispatch)=>{
-      axios.get("").then((res)=>dispatch(getProducts(res.data)))
+export const getDataAPI = ()=>(dispatch)=>{
+          
+        axios.get("https://stockover-backend-api.herokuapp.com/products").then((res)=>dispatch(getProducts(res.data.products)))
 }

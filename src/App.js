@@ -18,17 +18,19 @@ import LandingPage from '../src/Pages/Landing/LandingPage';
 import Product from './Pages/Products/Product';
 import Detail from './Pages/Details/Details';
 import Cart from './Pages/Cart/Cart';
+import Sign from './Pages/Sign/Sign';
 
 
 function App() {
   return (
     <div className="App">
        <Navbar/>
-       <Cart/>
+       {/* <Sign/> */}
+       {/* <Cart/> */}
        {/* <Detail/> */}
        {/* <Product/> */}
        {/* <LandingPage/> */}
-       {/* <Product/> */}
+       <Product/>
        <Routes>
         <Route path='/asd' element={<LandingPage/>}></Route>
         <Route  path='/kids' element={<Kids/>} ></Route>
