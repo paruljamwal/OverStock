@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const MainBox=styled.div`
-width: 95%;
+width: 98%;
 margin:1% 1% 0% 1%;
 border:1px solid transparent;
 display: flex;
-gap: 50px;
+gap: 30px;
 
 `;
 
 export const Head=styled.div`
 margin: 10% 0% 2% 1%;
-font-size:xx-large;
+font-size:40px;
 
 
 `;
@@ -37,21 +37,22 @@ width: 70%;
 export const MainGrid6=styled.div`
 display:grid;
 grid-template-columns: repeat(3,1fr);
-/* height: 450px; */
 border: 2px solid transparent;
 
 `
 
 export const ImageBox=styled.img` 
-width: 90%;
+width: 100%;
 height: 330px;
-margin:5%;
+cursor: pointer;
+
 `;
 
 export const InnerGrid=styled.div` 
  border:1px solid lightgray;
  margin: 2%;
  height:"400px";
+ border-radius: 5px;
 `;
 
 export const Price=styled.p` 

@@ -25,12 +25,12 @@ function App() {
   return (
     <div className="App">
        <Navbar/>
-       {/* <Sign/> */}
+       <Sign/>
        {/* <Cart/> */}
        {/* <Detail/> */}
        {/* <Product/> */}
        {/* <LandingPage/> */}
-       <Product/>
+       {/* <Product/> */}
        <Routes>
         <Route path='/asd' element={<LandingPage/>}></Route>
         <Route  path='/kids' element={<Kids/>} ></Route>

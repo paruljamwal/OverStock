@@ -1,58 +1,90 @@
-import React from 'react'
-import {Flex,Login,INPUT, HEAD, Label, Main, SignBox,Signed,Continue, TopBar,Input,Create } from './Sign.style'
+import React from "react";
+import {
+  Flex,
+  Login,
+  INPUT,
+  Signed1,
+  Para,
+  HEAD,
+  Hori,
+  Label,
+  Label1,
+  Main,
+  SignBox,
+  Signed,
+  Continue,
+  TopBar,
+  Input,
+  Create,
+} from "./Sign.style";
 // import { HEAD, Main, SignBox } from './Sign.style'
 
 const Sign = () => {
   return (
-
     <Main>
-        <TopBar>
-          <div>StockOver</div>
-          <div><p>you are using our secure server</p></div>
-          </TopBar> 
-        <hr />
-        <SignBox>
-            <Signed>
-                <HEAD>Create Account</HEAD>
-                 <Label>Email Address*</Label><br />
-                 <Input type="email" placeholder='Email' /><br />
-                  <Flex>
-                  <div>
+      <TopBar>
+        <div>StockOver</div>
+        <div>
+          <p>you are using our secure server</p>
+        </div>
+      </TopBar>
+      <hr />
+      <SignBox>
+        <Signed>
+          <HEAD>Create Account</HEAD>
+          <Label>Email Address*</Label>
+          <br />
+          <Input type="email" placeholder="Email" />
+          <br />
+          <Flex>
+            <div>
+              <Label1>Create Password*</Label1>
+              <br />
+              <INPUT type="password" placeholder="Password" />
+            </div>
+            <div>
+              <Label1>Confirm Password*</Label1>
+              <br />
+              <INPUT type="password" placeholder="Confirm Password" />
+              <br />
+            </div>
+          </Flex>
 
-                    <Label>Create Password*</Label><br />
-                    <INPUT type="password" placeholder="Password" />
-                
-                    </div>
-                    <div>
-                    <Label>Confirm Password*</Label><br />
-                    <INPUT type="password" placeholder='Confirm Password' /><br />
+          <Flex>
+            <div>
+              <input type="checkbox" />
+              <br />
+            </div>
+            <div>
+              <Para>
+                Sign up today for exclusive offers from Overstock.com delivered
+                right to your inbox**
+              </Para>
+            </div>
+          </Flex>
 
-                    </div>
-                    </Flex>
-                    <input type="checkbox" /><br />
-                    
-                   
-                     <Create>Create Account</Create><br />
-                     <Continue>Continue as Guest</Continue> 
-             <p>By creating an account or continuing as a Guest, you agree to our Terms & Conditions and Privacy Policy.</p>
+          <Create>Create Account</Create>
+          <br />
+          <Hori />
+          <Continue>Continue as Guest</Continue>
+        </Signed>
+        <Signed1></Signed1>
+        <Signed>
+          <HEAD>Sign In</HEAD>
 
-             <p>Terms & Conditions | Privacy Policy.
-
-**You can unsubscribe at any time</p>
-             </Signed>
-            <Signed>
-            <HEAD>Sign In</HEAD>
-
-            <Label>Email Address*</Label><br />
-            <Input type="email" placeholder='Email' /><br />
-            <Label>Password*</Label><br />
-            <Input type="Password" placeholder='Password' />
-             <Login>Sign In</Login>
-             <p>Forget your password</p>
-            </Signed>
-        </SignBox>
+          <Label>Email Address*</Label>
+          <br />
+          <Input type="email" placeholder="Email" />
+          <br />
+          <Label>Password*</Label>
+          <br />
+          <Input type="Password" placeholder="Password" />
+          <Login>Sign In</Login>
+          <p style={{ margin: "20px 0px 0px 70px" }}>Forget your password</p>
+        </Signed>
+      </SignBox>
     </Main>
-  )
-}
+  );
+};
 
-export default Sign
+export default Sign;
