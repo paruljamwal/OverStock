@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Maincard1=styled.div` 
-border: 1px solid lightgray;
-width: 98%;
+border: 1px solid transparent;
+width: 93%;
+margin: auto;
 `;
 
 export const Head1=styled.p`
-margin-left: 3%;
+margin-left: 1%;
 margin-top: 10%;
 font-size: 7vh
 `;
@@ -41,7 +42,7 @@ display: flex;
 `;
 
 export const ImgDiv=styled.div` 
-border: 1px solid lightgray;
+border: 1px solid transparent;
 width: 260px;
 height: 260px;
 
@@ -108,4 +109,42 @@ text-decoration: underline;
 
 export const Linkdiv=styled.div` 
 margin:20px 50px 0px 0px;
+`;
+
+export const CartDiv=styled.div` 
+margin: 6%;
+`;
+
+export const Para3=styled.p` 
+font-size: larger;
+text-align: center;
+color: rgb(47,51,55)
+`;
+
+export const Box1=styled.div`
+color: rgb(47,51,55);
+margin: 10px;
+display: flex;
+justify-content: space-between;
+`;
+
+export const Checkout=styled.button` 
+width: 100%;
+height: 44px;
+border-radius: 4px;
+background-color: rgb(47,51,55);
+font-size: larger;
+color: whitesmoke;
+margin: 5% 1% 1% 0%;
+border: none;
+cursor: pointer;
+`;
+
+export const Big=styled.p` 
+font-size: larger;
+font-weight: bolder;
+`;
+
+export const Gray=styled.span` 
+color:slategray;
 `;

@@ -16,7 +16,13 @@ import {
   Under,
   Lowlink,
   Linkdiv,
-  IMAGE
+  IMAGE,
+  CartDiv,
+  Para3,
+  Box1,
+  Checkout,
+  Big,
+  Gray
 } from "./Cart.Style";
 
 const Cart = () => {
@@ -54,8 +60,31 @@ const Cart = () => {
             </MidCard>
           </LeftCard>
           <RightCard>
-
+           
+           <CartDiv>
+            <Para3><Gray>You saved</Gray> $43.45 <Gray> on this order</Gray></Para3>
+           <Box1>
+            <div>(1) Items:</div>
+            <div>INR 20,992</div>
+           </Box1>
             
+            <Box1>
+                <Gray>Sale Savings:</Gray>
+                <RED2>-INR 3883.51</RED2>
+            </Box1>
+
+            <Box1>
+                <div>Subtotal:</div>
+                <div>INR 17,108.89</div>
+            </Box1>
+            <hr></hr>
+            <Box1>
+                <Big>Your Total:</Big>
+                <Big>INR 17,108.89</Big>
+            </Box1>
+
+            <Checkout>Check Out</Checkout>
+            </CartDiv>
           </RightCard>
         </CartBox>
       </Maincard1>
