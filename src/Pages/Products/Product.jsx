@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Products.css'
 import { Head, LeftBox,Stars,Name, MainBox,Price, InnerGrid, RightBox,MainGrid6, ImageBox } from './Products.styled'
 import InputLabel from '@mui/material/InputLabel';
@@ -12,6 +12,10 @@ import Typography from '@mui/material/Typography';
 // import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const Product = () => {
   const [age, setAge] = React.useState('');
+  const [data,setData] = useState([])
+
+
+  
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);

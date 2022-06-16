@@ -1,21 +1,31 @@
 .leftbox{
    width: 20%; 
-   border:1px green solid;
+   border:1px rgb(244, 244, 244) solid;
    height: 350px;
 }
 
 .rightbox{
-    width: 78%;
+    width: 95%;
     margin-left: 2%;
-    border:1px blue solid;
+    border:1px transparent solid;
 }
 .left{
     margin: 25px;
 }
 .box{
     display: flex;
+    margin: auto;
 }
 
 .innerbox{
     flex:1;
+}
+
+.InnerBox1{
+    width: 90%;
+    border: 1px solid rgb(222, 222, 222);
+}
+
+.InnerBox2{
+    text-align: center;
 }
