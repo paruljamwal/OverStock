@@ -8,7 +8,7 @@ margin: auto;
 `;
 
 export const Upbox=styled.div` 
-
+margin-bottom: 1%;
 `;
 
 export const UpImg=styled.img` 
@@ -23,7 +23,14 @@ height: 1px;
 `;
 
 export const UpImg1 =styled.img` 
-width: 200px;
+width: 150px;
+margin-top: 10%;
+
+`;
+
+export const Div1=styled.div` 
+margin-top: 2%;
+color: gray;
 
 `;
 
@@ -61,7 +68,7 @@ export const Input=styled.input`
 export const Head=styled.p` 
 background-color: rgb(240,236,224);
 margin-top: 2%;
-height: 30px;
+height: 25px;
 padding: 4px;
 border-bottom: 2px solid lightgray;
 `;
@@ -123,3 +130,36 @@ height: 25px;
  margin: 2px;
  
  `;
+
+ export const BoxFlex1=styled.div` 
+ 
+ display: flex;
+ `
+
+ export const Select=styled.select` 
+   margin-left: 36%;
+   height: 25px;
+   border: 1px solid lightgray;
+
+ `;
+
+ 
+export const Label1=styled.label` 
+margin-left: 4px;
+`;
+
+
+export const Button=styled.button` 
+margin-left: 4px;
+background-color: rgb(129,165,85);
+border:none;
+height: 30px;
+width: 150px;
+border-radius: 4px;
+margin: 3% 2% 4% 80%;
+cursor: pointer;
+`;
+
+export const Input3=styled.input` 
+margin-top: 15px;
+`

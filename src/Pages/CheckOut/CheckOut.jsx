@@ -1,7 +1,8 @@
 import React from 'react'
-import {Inputradio,RadionBox,TextBox,Logoimg,Input1,Input2, CheckOutBox,UpImg1,Flex,Head,Method ,Label ,Green,Upbox,UpImg,Line,Inbox,BoxFlex,MainBill,BillBox,ShipBox,Input} from './CheckOut.style'
+import {Inputradio,Input3,Div1,Label1,Button,Select,BoxFlex1,RadionBox,TextBox,Logoimg,Input1,Input2, CheckOutBox,UpImg1,Flex,Head,Method ,Label ,Green,Upbox,UpImg,Line,Inbox,BoxFlex,MainBill,BillBox,ShipBox,Input} from './CheckOut.style'
 import logo from '../../assests/download.png'
 import './CheckOut.css'
+
 const CheckOut = () => {
   return (
     <CheckOutBox>
@@ -9,7 +10,9 @@ const CheckOut = () => {
      <Line></Line>
       <Flex>
         <div><UpImg1 src="https://ak1.ostkcdn.com/img/mxc/20170922_fedexLogo.png" alt="" /></div>
-        <div><p>Secure checkout provided by FedEx International.</p></div>
+        <Div1><p>Secure checkout provided by FedEx International.</p>
+             <p>Your order total includes customs and taxes, if applicable.</p>
+        </Div1>
       </Flex>
       <MainBill>
         <BillBox>
@@ -105,19 +108,28 @@ const CheckOut = () => {
           </div>
         </Logoimg>
         <div>
-        <BoxFlex> <Label>Carf Type* </Label> 
+        <BoxFlex1> <Label1>Carf Type* </Label1> 
           
-          <select>
+          <Select>
             <option value="">Visa card</option>
             <option value="">Master Card</option>
             <option value="">bitcoin</option>
-          </select></BoxFlex>
+          </Select></BoxFlex1>
         <BoxFlex><Label> Credit Card Number*</Label><Inbox> <Input1 type="text" /></Inbox></BoxFlex> 
         <BoxFlex> <Label> Expiration Data*</Label><Inbox> <Input2 type="text" /><Input2 type="text" /></Inbox></BoxFlex>
         <BoxFlex> <Label>   Security Code*</Label><Inbox> <Input1 type="Password" /></Inbox></BoxFlex>
         </div>
       </div>
-       
+
+   <img src="https://storage.crossborder.fedex.com/s3bongous/f98ca95b1b79417f2c4685355a3cfba2.png" alt="" /> 
+      <BoxFlex><Input3 type="checkbox"></Input3>
+      <TextBox>when you sign for email, you'll get exclusive coupons, notifications, sales and product ideas (i)</TextBox>
+       <a href='#'>Privacy Policy</a>
+      </BoxFlex>
+
+      <p>By clicking the "Place order" button, you acknowledge that your order will be processed and fulfilled by
+FedEx Cross Border and you agree to FedEx Cross Border Terms and Conditions and Privacy Policy.</p>
+         <Button>Place Order</Button>         
     </CheckOutBox>
   )
 }
