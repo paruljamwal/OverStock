@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { Head, MainBox, LowerBox, ImgPoster, Para, Blue, GridCard, CardImg, CardBox } from './Kids.styled'
 import "./Kids.css"
 const Kids = () => {
@@ -81,7 +82,7 @@ const Kids = () => {
           <div className='box'>
             {data6.map((e)=>(
             <div className='innerbox'>
-              <img className='InnerBox1' src={e.image} alt="" />
+            <Link to='/products'><img className='InnerBox1' src={e.image} alt="" /></Link>  
               <p className='InnerBox2'>{e.name}</p> 
             </div>
             ))}

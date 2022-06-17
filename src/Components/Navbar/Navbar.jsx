@@ -19,7 +19,7 @@ const Navbar = () => {
           }}
         >
           <Ship>Ships to:</Ship>
-          <India alt="Cindy Baker" src={india} />
+          <Link to='/'><India alt="Cindy Baker" src={india} /></Link> 
           <Country>India</Country>
         </Box>
         <Box
@@ -30,7 +30,7 @@ const Navbar = () => {
             display: "flex",
           }}
         >
-          <Logo src={logo} alt="logo" />
+         <Link to='/'><Logo src={logo} alt="logo" /></Link> 
           <Inputbar placeholder="Search" />
           <SearchBttn>
             <Search src={search}></Search>

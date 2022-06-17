@@ -26,8 +26,8 @@ import Footer from './Components/Footer/Footer';
 function App() {
   return (
     <div className="App">
-       <Footer/>
-       {/* <Navbar/> */}
+       <Navbar/>
+       
        {/* <CheckOut/> */}
        {/* <Sign/> */}
        {/* <Cart/> */}
@@ -36,8 +36,13 @@ function App() {
        {/* <LandingPage/> */}
        {/* <Product/> */}
        <Routes>
-        <Route path='/asd' element={<LandingPage/>}></Route>
+        <Route path='/' element={<LandingPage/>}></Route>
         <Route  path='/kids' element={<Kids/>} ></Route>
+        <Route path='/products' element={<Product/> } />
+        <Route path='/details' element={<Detail/>} />
+        <Route path='/cart' element={<Cart/>} />
+        <Route path='/sign' element={<Sign/>} />
+         <Route path="/checkout" element={<CheckOut/>} />
         <Route path='/furniture' element={<Furniture/>}></Route>
         <Route path='/rugs' element={<Rugs/>}></Route>
         <Route path='/decor' element={<Decor/>}></Route>
@@ -50,6 +55,7 @@ function App() {
         <Route path='/idea' element={<Ideas/>}></Route>
         <Route path='/sales' element={<Sales/>}></Route>
        </Routes>
+       <Footer/>
     </div>
   );
 }

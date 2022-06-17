@@ -2,8 +2,12 @@ import React from 'react'
 import {Inputradio,Input3,Div1,Label1,Button,Select,BoxFlex1,RadionBox,TextBox,Logoimg,Input1,Input2, CheckOutBox,UpImg1,Flex,Head,Method ,Label ,Green,Upbox,UpImg,Line,Inbox,BoxFlex,MainBill,BillBox,ShipBox,Input} from './CheckOut.style'
 import logo from '../../assests/download.png'
 import './CheckOut.css'
-
+import {useNavigate} from 'react-router-dom'
 const CheckOut = () => {
+  const navigate=useNavigate()
+  const gotolanding=()=>{
+    navigate('/')
+  }
   return (
     <CheckOutBox>
       <Upbox><UpImg src={logo} alt="" /></Upbox>
@@ -129,7 +133,7 @@ const CheckOut = () => {
 
       <p>By clicking the "Place order" button, you acknowledge that your order will be processed and fulfilled by
 FedEx Cross Border and you agree to FedEx Cross Border Terms and Conditions and Privacy Policy.</p>
-         <Button>Place Order</Button>         
+         <Button onClick={()=>gotolanding()} >Place Order</Button>         
     </CheckOutBox>
   )
 }

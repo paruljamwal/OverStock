@@ -43,7 +43,7 @@ const Footer = () => {
           <p>799 Colliseum Way Midvate,UT 84047 | 1-800-843-2446</p>
         </Lower1>
         <Lower2>
-           <span>Terms & Conditions    *Promotion Terms    Ship to: <img src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif" alt="" /></span>
+           <span>Terms & Conditions    *Promotion Terms    Ship to: <img style={{width:"20px"}} src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif" alt="" /></span>
         </Lower2>
       </FooterLower>
 

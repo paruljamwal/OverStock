@@ -1,4 +1,5 @@
 import React from "react";
+import {useNavigate} from "react-router-dom"
 import {
   CartBox,
   Head1,
@@ -26,6 +27,11 @@ import {
 } from "./Cart.Style";
 
 const Cart = () => {
+  const navigate=useNavigate()
+
+  const gotocheck=()=>{
+    navigate("/sign")
+  }
   return (
     <>
       <Maincard1>
@@ -83,7 +89,7 @@ const Cart = () => {
                 <Big>INR 17,108.89</Big>
             </Box1>
 
-            <Checkout>Check Out</Checkout>
+            <Checkout onClick={()=>gotocheck()}>Check Out</Checkout>
             </CartDiv>
           </RightCard>
         </CartBox>

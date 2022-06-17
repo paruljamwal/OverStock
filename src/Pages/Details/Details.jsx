@@ -34,7 +34,12 @@ import insta from '../../assests/instagram.png';
 import whats from '../../assests/whatsapp.png';
 import pin from '../../assests/pinterest.png';
 import twitter from '../../assests/twitter.png';
+import {useNavigate} from 'react-router-dom';
 const Detail = () => {
+  const navigate=useNavigate()
+  const gotocheck=()=>{
+    navigate('/cart')
+  }
   return (
     <Box>
     <MainCart>
@@ -73,7 +78,7 @@ const Detail = () => {
             <option className="opList">Quantity:6</option>
           </SelectBox>
 
-          <Button>Add to Cart</Button>
+          <Button onClick={()=>gotocheck()} >Add to Cart</Button>
         </Flex>
 
         <Flex>
@@ -126,7 +131,10 @@ const Detail = () => {
         </Stars1>
         <Title>Customer Reviews</Title>
         <Customer>
-
+           <label>Reviews</label>
+           <meter value="2" min='0' max='10' >2/10</meter>
+           <label>Reviews</label>
+           <meter value="0.6" id="disk">60</meter>
         </Customer>
 
 

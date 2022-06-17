@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FullStar from "../../assests/FullStar.png";
 import Star from "../../assests/star.png";
 import "./Products.css";
+import { Link } from "react-router-dom";
 import {
   Head,
   LeftBox,
@@ -14,6 +15,16 @@ import {
   MainGrid6,
   ImageBox,
   StarList,
+  Red,
+  Green,
+  Brown,
+  Pink,
+  Yellow,
+  Sky,
+  Black,
+  White,
+  Blue,
+  Btn,
 } from "./Products.styled";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -74,9 +85,8 @@ const Product = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                <Btn>High To Low</Btn>
+                <Btn>Low To High</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -90,9 +100,15 @@ const Product = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                <Red></Red>
+                <Green></Green>
+                <Pink></Pink>
+                <Brown></Brown>
+                <Yellow></Yellow>
+                <Sky></Sky>
+                <Black></Black>
+                <White></White>
+                <Blue></Blue>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -106,9 +122,9 @@ const Product = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                <Btn>Dimple</Btn>
+                <Btn>KidsKraft</Btn>
+                <Btn>Evergreen</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -122,9 +138,10 @@ const Product = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                <Btn>Plastic</Btn>
+                <Btn>Wood</Btn>
+                <Btn>Silk</Btn>
+                <Btn>Cotton</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -138,9 +155,8 @@ const Product = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                <Btn>Available</Btn>
+                <Btn>Not Available</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -154,9 +170,8 @@ const Product = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                <Btn>Indoor</Btn>
+                <Btn>Outdoor</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -170,9 +185,31 @@ const Product = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                <Btn>1</Btn>
+                <Btn>2</Btn>
+                <Btn>3</Btn>
+                <Btn>4</Btn>
+                <Btn>5</Btn>
+                <Btn>6</Btn>
+                <Btn>7</Btn>
+                <Btn>8</Btn>
+                <Btn>9</Btn>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion>
+            <AccordionSummary
+              expandIcon={"+"}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>Types</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                <Btn>Outdoor</Btn>
+                <Btn>Indoor</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -208,57 +245,43 @@ const Product = () => {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={"+"}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography>Types</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
         </LeftBox>
         <RightBox>
           <MainGrid6>
-              {products.map((e) => (
-                <>
-            <InnerGrid>
+            {products.map((e) => (
+              <>
+                <InnerGrid>
                   <div>
-                    <ImageBox src={e.image} />
+                    <Link to="/details">
+                      <ImageBox src={e.image} />
+                    </Link>
                   </div>
                   <div>
                     <Price>PRICE: {e.price}</Price>
                   </div>
                   <Stars>
-          <div>
-            <StarList src={FullStar} />
-          </div>
-          <div>
-            <StarList src={FullStar} />
-          </div>
-          <div>
-            <StarList src={FullStar} />
-          </div>
-          <div>
-            <StarList src={Star} />
-          </div>
-          <div>
-            <StarList src={Star} />
-          </div>
-        </Stars>
+                    <div>
+                      <StarList src={FullStar} />
+                    </div>
+                    <div>
+                      <StarList src={FullStar} />
+                    </div>
+                    <div>
+                      <StarList src={FullStar} />
+                    </div>
+                    <div>
+                      <StarList src={Star} />
+                    </div>
+                    <div>
+                      <StarList src={Star} />
+                    </div>
+                  </Stars>
                   <div>
                     <Name>{e.name}</Name>
                   </div>
-            </InnerGrid>
-                </>
-              ))}
+                </InnerGrid>
+              </>
+            ))}
           </MainGrid6>
         </RightBox>
       </MainBox>

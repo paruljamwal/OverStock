@@ -17,9 +17,14 @@ import {
   Input,
   Create,
 } from "./Sign.style";
+import {useNavigate} from 'react-router-dom'
 // import { HEAD, Main, SignBox } from './Sign.style'
 
 const Sign = () => {
+  const navigate=useNavigate()
+  const gotocheck=()=>{
+    navigate('/checkout')
+  }
   return (
     <Main>
       <TopBar>
@@ -79,7 +84,7 @@ const Sign = () => {
           <Label>Password*</Label>
           <br />
           <Input type="Password" placeholder="Password" />
-          <Login>Sign In</Login>
+          <Login onClick={()=>gotocheck()} >Sign In</Login>
           <p style={{ margin: "20px 0px 0px 70px" }}>Forget your password</p>
         </Signed>
       </SignBox>
