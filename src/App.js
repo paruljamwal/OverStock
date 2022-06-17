@@ -20,13 +20,15 @@ import Detail from './Pages/Details/Details';
 import Cart from './Pages/Cart/Cart';
 import Sign from './Pages/Sign/Sign';
 import CheckOut from './Pages/CheckOut/CheckOut';
+import Footer from './Components/Footer/Footer';
 
 
 function App() {
   return (
     <div className="App">
+       <Footer/>
        {/* <Navbar/> */}
-       <CheckOut/>
+       {/* <CheckOut/> */}
        {/* <Sign/> */}
        {/* <Cart/> */}
        {/* <Detail/> */}
