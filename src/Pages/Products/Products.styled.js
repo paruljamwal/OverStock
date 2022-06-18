@@ -178,3 +178,12 @@ export const Btn=styled.button`
  margin:2px 4px 5px 55px;
  border: 1px solid transparent;
 `;
+
+export const Button=styled.button` 
+ height: 50px;
+ border-radius: 40px;
+ width: 50px;
+ margin:6px 0px 1px 55px;
+ border: 1px solid transparent;
+ cursor: pointer;
+`;

@@ -25,6 +25,7 @@ import {
   White,
   Blue,
   Btn,
+  Button
 } from "./Products.styled";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -40,20 +41,25 @@ import { getDataAPI } from "../../Redux/Product/action";
 const Product = () => {
   const [age, setAge] = React.useState("");
 
-  const products = useSelector((store) => store.product.products);
+  const {loading,error,products} = useSelector((store) => store.product);
   const dispatch = useDispatch();
-  console.log(products);
+  // console.log(products);
 
   useEffect(() => {
-    dispatch(getDataAPI());
-  }, []);
+    if(products?.length===0){
+      dispatch(getDataAPI());
+    }
+  }, [products?.length,dispatch]);
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
   };
+
+  if(loading) return <h1>Loading.....</h1>
+  if(error) return <h1>Error.......</h1>
   return (
     <div>
-      Product
+    
       <Head>Outdoor Playhouses & Play Tents</Head>
       <FormControl classname="sort" sx={{ m: 1, minWidth: 120 }} size="small">
         <InputLabel id="demo-select-small">Sort</InputLabel>
@@ -73,6 +79,7 @@ const Product = () => {
           <MenuItem value={30}>New Arrivals</MenuItem>
         </Select>
       </FormControl>
+      <Button>{`<`}</Button>  <Button>{`>`}</Button>
       <MainBox>
         <LeftBox>
           <Accordion>
@@ -248,11 +255,11 @@ const Product = () => {
         </LeftBox>
         <RightBox>
           <MainGrid6>
-            {products.map((e) => (
+            {products.length && products.map((e) => (
               <>
                 <InnerGrid>
                   <div>
-                    <Link to="/details">
+                    <Link to={`/products/${e._id}`}>
                       <ImageBox src={e.image} />
                     </Link>
                   </div>
@@ -285,6 +292,8 @@ const Product = () => {
           </MainGrid6>
         </RightBox>
       </MainBox>
+      
+      
     </div>
   );
 };

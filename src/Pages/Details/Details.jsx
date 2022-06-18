@@ -34,20 +34,34 @@ import insta from '../../assests/instagram.png';
 import whats from '../../assests/whatsapp.png';
 import pin from '../../assests/pinterest.png';
 import twitter from '../../assests/twitter.png';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate,useParams} from 'react-router-dom';
+import { useSelector , useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getSingleAPI } from "../../Redux/Product/action";
 const Detail = () => {
   const navigate=useNavigate()
-  const gotocheck=()=>{
-    navigate('/cart')
+  const dispatch=useDispatch()
+  const {id}=useParams();
+  const {loading,error,singleproduct}=useSelector((store)=>store.product)
+  useEffect(()=>{
+
+    dispatch(getSingleAPI(id))
+  
+  },[dispatch])
+ 
+  const gotocheck=(id)=>{
+    navigate(`/details/${id}`)
   }
+  if(loading) return <h1>Loading.....</h1>
+  if(error) return <h1>Error.......</h1>
   return (
     <Box>
     <MainCart>
       <Slider>
-        <SliderImg src="https://ak1.ostkcdn.com/images/products/30567641/Princess-Castle-Play-Tent-for-Girls-with-LED-Star-String-Lights-Pink-1-64bbd6ad-b354-4f15-aaca-a9aae63a0b30_600.jpg" alt="" />
+        <SliderImg src={singleproduct.image} alt="" />
       </Slider>
       <Details>
-        <Name>Princess Castle LED Pink Play Tent</Name>
+        <Name>{singleproduct.name}</Name>
         <Stars>
           <div>
             <StarList src={FullStar} />
@@ -65,8 +79,8 @@ const Detail = () => {
             <StarList src={Star} />
           </div>
         </Stars>
-        <Blue>#2 of 107 in Outdoor Playhouses & Play...</Blue>
-        <Red1>Sale INR 2671 77</Red1>
+        <Blue>#2 of 107 in {singleproduct.features} Playhouses & Play...</Blue>
+        <Red1>Sale INR {singleproduct.price}</Red1>
         <Red2>Sale Ends in: 1 day 23 hr</Red2>
         <Flex>
           <SelectBox>
@@ -78,7 +92,7 @@ const Detail = () => {
             <option className="opList">Quantity:6</option>
           </SelectBox>
 
-          <Button onClick={()=>gotocheck()} >Add to Cart</Button>
+          <Button onClick={()=>gotocheck(singleproduct._id)} >Add to Cart</Button>
         </Flex>
 
         <Flex>

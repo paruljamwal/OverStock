@@ -56,3 +56,50 @@ margin:3px 0px 1px 43px;
 color: gray;
 font-size: large;
 `;
+
+export const RightBox=styled.div`
+border: 1px solid transparent;
+position: absolute;
+left: 66%;
+top: 38px;
+width: 32%; 
+height: 40px;
+display: flex;
+`;
+
+
+export const Btn=styled.button`
+width: 26%;
+border:none ;
+background-color:rgb(45,48,52);
+color: whitesmoke;
+height: 34px;
+position: absolute;
+top: 8px;
+cursor: pointer;
+left:72%;
+border-radius: 4px;
+`;
+
+export const Img=styled.img` 
+width: 20px;
+cursor: pointer;
+&:hover{
+   filter: grayscale(0);
+  transform: scale(1.1)
+}
+`;
+
+export const Name=styled.p`
+cursor: pointer; 
+&:hover{
+    filter:grayscaly(0);
+    transform:scale(1.1);
+}
+`;
+
+export const  Div=styled.div` 
+border: 1px solid transparent;
+width: 90px;
+text-align: center;
+`;

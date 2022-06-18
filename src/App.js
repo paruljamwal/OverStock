@@ -26,7 +26,7 @@ import Footer from './Components/Footer/Footer';
 function App() {
   return (
     <div className="App">
-       <Navbar/>
+       {/* <Navbar/> */}
        
        {/* <CheckOut/> */}
        {/* <Sign/> */}
@@ -36,12 +36,14 @@ function App() {
        {/* <LandingPage/> */}
        {/* <Product/> */}
        <Routes>
-        <Route path='/' element={<LandingPage/>}></Route>
-        <Route  path='/kids' element={<Kids/>} ></Route>
-        <Route path='/products' element={<Product/> } />
-        <Route path='/details' element={<Detail/>} />
-        <Route path='/cart' element={<Cart/>} />
-        <Route path='/sign' element={<Sign/>} />
+        <Route exact path='/' element={<LandingPage/>}></Route>
+        <Route exact  path='/kids' element={<Kids/>} ></Route>
+        <Route exact path='/products' element={<Product/> } />
+        <Route exact path='/products/:id' element={<Detail/> } />
+        <Route exact path='/details' element={<Detail/>} />
+        <Route exact path='/details/:id' element={<Cart/>} />
+        <Route exact path='/cart' element={<Cart/>} /> 
+        <Route exact path='/sign' element={<Sign/>} />
          <Route path="/checkout" element={<CheckOut/>} />
         <Route path='/furniture' element={<Furniture/>}></Route>
         <Route path='/rugs' element={<Rugs/>}></Route>
@@ -55,7 +57,7 @@ function App() {
         <Route path='/idea' element={<Ideas/>}></Route>
         <Route path='/sales' element={<Sales/>}></Route>
        </Routes>
-       <Footer/>
+       {/* <Footer/> */}
     </div>
   );
 }

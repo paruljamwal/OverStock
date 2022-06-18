@@ -1,5 +1,8 @@
 import React from "react";
-import {useNavigate} from "react-router-dom"
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {useNavigate,useParams} from "react-router-dom"
+import { getSingleAPI } from "../../Redux/Product/action";
 import {
   CartBox,
   Head1,
@@ -28,10 +31,20 @@ import {
 
 const Cart = () => {
   const navigate=useNavigate()
+  const {id}=useParams()
+  const dispatch=useDispatch()
+  const {loading,error,singleproduct}=useSelector((store)=>store.product)
+  useEffect(()=>{
+    dispatch(getSingleAPI(id))
+  },[])
+
+  // console.log(singleproduct)
 
   const gotocheck=()=>{
     navigate("/sign")
   }
+  if(loading) return <h1>Loading.....</h1>
+  if(error) return <h1>Error.......</h1>
   return (
     <>
       <Maincard1>
@@ -40,13 +53,13 @@ const Cart = () => {
           <LeftCard>
             <MidCard>
               <ImgDiv>
-               <IMAGE src='https://ak1.ostkcdn.com/images/products/is/images/direct/3828c3f21f440fb80cf3a0e0f32197060da5ba8c/Princess-Castle-Play-House-Large-Outdoor-Kids-Play-Tent-for-Girls-Pink--Blue.jpg?imwidth=480&impolicy=medium' />
+               <IMAGE src={singleproduct.image} />
               </ImgDiv>
               <ProductD>
-                <Para1>Princess Castke LED Pink Play Tent</Para1>
-                <Para2>Pink-Toddler</Para2>
-                <Under>INR3,242.323</Under>
-                <RED1>Sale INR 2,674.21</RED1>
+                <Para1>{singleproduct.name}</Para1>
+                <Para2>{singleproduct.color}-Toddler</Para2>
+                <Under>INR3,{singleproduct.price}</Under>
+                <RED1>Sale INR {singleproduct.price}</RED1>
                 <RED2>15% Savings</RED2>
                 <RED2>Ends in 1 day 18 hrs 45 min</RED2>
                 <SelectBox1>
@@ -89,7 +102,7 @@ const Cart = () => {
                 <Big>INR 17,108.89</Big>
             </Box1>
 
-            <Checkout onClick={()=>gotocheck()}>Check Out</Checkout>
+            <Checkout onClick={()=>gotocheck(singleproduct._id)}>Check Out</Checkout>
             </CartDiv>
           </RightCard>
         </CartBox>
