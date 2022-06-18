@@ -1,5 +1,5 @@
 import React from 'react'
-
+import styled from 'styled-components'
 const Decor = () => {
   const Box=styled.div` 
   width: 60%;
