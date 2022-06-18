@@ -23,80 +23,129 @@ import {
   Sky,
   Black,
   White,
+  Select,
   Blue,
   Btn,
-  Button
+  Button,
+  Dabba,
+  ProductContainer
 } from "./Products.styled";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import { useSelector, useDispatch } from "react-redux";
-import { getDataAPI } from "../../Redux/Product/action";
+import { getDataAPI, getProducts } from "../../Redux/Product/action";
 // import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const Product = () => {
   const [age, setAge] = React.useState("");
+  const [page,setPage]=useState(1)
+  const [limit,setLimit]=useState(10)
 
   const {loading,error,products} = useSelector((store) => store.product);
   const dispatch = useDispatch();
   // console.log(products);
 
+  const handelpage=(p)=>{
+    setPage(page+p)
+    dispatch(getDataAPI(page));
+  
+  }
+  // console.log(page,limit)
+   
+
   useEffect(() => {
-    if(products?.length===0){
-      dispatch(getDataAPI());
-    }
-  }, [products?.length,dispatch]);
+    
+      dispatch(getDataAPI(page));
+    
+  }, [dispatch,page]);
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
   };
 
-  if(loading) return <h1>Loading.....</h1>
-  if(error) return <h1>Error.......</h1>
-  return (
-    <div>
+  const handelprice=(e)=>{
     
+    
+    if(e.target.value==="Low"){
+       const ascarr = products.sort((a,b)=>{
+                    return a.price-b.price
+       })
+      dispatch(getProducts(ascarr))
+    }
+  
+      if(e.target.value==="High"){
+        const descarr = products.sort((a,b)=>{
+          return b.price-a.price
+})
+              dispatch(getProducts(descarr))
+      }
+      else if(e.target.value==""){
+        dispatch(getDataAPI())
+      }
+    
+  }
+
+  const handelcolor=(e)=>{
+  //  console.log(e.target.value)
+   let colorproduct= products.filter((el)=>el.color==e.target.value)
+   dispatch(getProducts(colorproduct))
+  }
+
+   const handelbrand=(e)=>{
+    // console.log(e.target.value)
+    let brands=products.filter((el)=>el.brands==e.target.value)
+    dispatch(getProducts(brands))
+   }
+
+   const handelMaterial=(e)=>{
+    console.log(e.target.value)
+    let material=products.filter((el)=>el.material==e.target.value)
+    dispatch(getProducts(material))
+   }
+
+   const handelave=(e)=>{
+    console.log(e.target.value)
+    let ava=products.filter((el)=>el.availabilty==e.target.value)
+    dispatch(getProducts(ava))
+   }
+
+
+   const handelfeature=(e)=>{
+    console.log(e.target.value)
+    let fea=products.filter((el)=>el.features==e.target.value)
+    dispatch(getProducts(fea))
+   }
+
+   const handelage=(e)=>{
+    console.log(e.target.value)
+    let age=products.filter((el)=>el.age==e.target.value)
+    dispatch(getProducts(age))
+   }
+
+   const handeltype=(e)=>{
+    console.log(e.target.value)
+    let type=products.filter((el)=>el.type==e.target.value)
+    dispatch(getProducts(type))
+   }
+  // if(loading) return <h1>Loading.....</h1>
+  // if(error) return <h1>Error.......</h1>
+  return (
+    <ProductContainer>
+      <Dabba></Dabba>
       <Head>Outdoor Playhouses & Play Tents</Head>
-      <FormControl classname="sort" sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small">Sort</InputLabel>
-        <Select
-          labelId="demo-select-small"
-          id="demo-select-small"
-          value={age}
-          label="Age"
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Price Low-High</MenuItem>
-          <MenuItem value={20}>Price High-Low</MenuItem>
-          <MenuItem value={30}>Customer Rating</MenuItem>
-          <MenuItem value={30}>New Arrivals</MenuItem>
-        </Select>
-      </FormControl>
-      <Button>{`<`}</Button>  <Button>{`>`}</Button>
+      <Select onChange={handelprice} >
+        <option value="">Select Price</option>
+        <option value="High" >High To Low</option>
+        <option value="Low" >Low To High</option>
+      </Select>
+      <Button disabled={page===1} onClick={()=>handelpage(-1)} >{`<`}</Button  >  <Button onClick={()=>handelpage(+1)} >{`>`}</Button>
       <MainBox>
         <LeftBox>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={"+"}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>Price</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                <Btn>High To Low</Btn>
-                <Btn>Low To High</Btn>
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+        
           <Accordion>
             <AccordionSummary
               expandIcon={"+"}
@@ -106,16 +155,16 @@ const Product = () => {
               <Typography>Colors</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
-                <Red></Red>
-                <Green></Green>
-                <Pink></Pink>
-                <Brown></Brown>
-                <Yellow></Yellow>
-                <Sky></Sky>
-                <Black></Black>
-                <White></White>
-                <Blue></Blue>
+              <Typography onClick={handelcolor} >
+                <Red value="red" ></Red>
+                <Green value="GREEN" ></Green>
+                <Pink value="Pink" ></Pink>
+                <Brown value="brown" ></Brown>
+                <Yellow value="yellow"></Yellow>
+                <Sky value="skyblue"></Sky>
+                <Black value="orange"></Black>
+                <White value="gray"></White>
+                <Blue value="white"></Blue>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -128,10 +177,10 @@ const Product = () => {
               <Typography>Brands</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
-                <Btn>Dimple</Btn>
-                <Btn>KidsKraft</Btn>
-                <Btn>Evergreen</Btn>
+              <Typography onClick={handelbrand} >
+                <Btn value="Dimple" >Dimple</Btn>
+                <Btn value="KidKraft" >KidsKraft</Btn>
+                <Btn value="LivEditor" >LivEditor</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -144,11 +193,12 @@ const Product = () => {
               <Typography>Materials</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
-                <Btn>Plastic</Btn>
-                <Btn>Wood</Btn>
-                <Btn>Silk</Btn>
-                <Btn>Cotton</Btn>
+              <Typography onClick={handelMaterial}>
+                <Btn value="plastic">Plastic</Btn>
+                <Btn value="wooden">Wood</Btn>
+                <Btn value="cotton">Cotton</Btn>
+                <Btn value="net">Net</Btn>
+                <Btn value="nylon">Nylon</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -161,9 +211,9 @@ const Product = () => {
               <Typography>Availability</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
-                <Btn>Available</Btn>
-                <Btn>Not Available</Btn>
+              <Typography onClick={handelave} >
+                <Btn value="available">Available</Btn>
+                <Btn value="not available">Not Available</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -176,9 +226,9 @@ const Product = () => {
               <Typography>Product Features</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
-                <Btn>Indoor</Btn>
-                <Btn>Outdoor</Btn>
+              <Typography onClick={handelfeature} >
+                <Btn value="Indoor">Indoor</Btn>
+                <Btn value="Outdoor">Outdoor</Btn>
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -191,16 +241,15 @@ const Product = () => {
               <Typography>Ages</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
-                <Btn>1</Btn>
-                <Btn>2</Btn>
-                <Btn>3</Btn>
-                <Btn>4</Btn>
-                <Btn>5</Btn>
-                <Btn>6</Btn>
-                <Btn>7</Btn>
-                <Btn>8</Btn>
-                <Btn>9</Btn>
+              <Typography onClick={handelage} >
+                <Btn value="2">2</Btn>
+                <Btn value="3">3</Btn>
+                <Btn value="4">4</Btn>
+                <Btn value="5">5</Btn>
+                <Btn value="6">6</Btn>
+                <Btn value="7">7</Btn>
+                <Btn value="8">8</Btn>
+            
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -214,9 +263,13 @@ const Product = () => {
               <Typography>Types</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
-                <Btn>Outdoor</Btn>
-                <Btn>Indoor</Btn>
+              <Typography onClick={handeltype} >
+                <Btn value="Diy Kits">Diy Kits</Btn>
+                <Btn value="Ever green">Ever green</Btn>
+                <Btn value="Dimple">Dimple</Btn>
+                <Btn value="Backyard discovery">Backyard discovery</Btn>
+                <Btn value="Hanging Tents">Hanging Tents</Btn>
+                
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -255,7 +308,7 @@ const Product = () => {
         </LeftBox>
         <RightBox>
           <MainGrid6>
-            {products.length && products.map((e) => (
+            { products.map((e) => (
               <>
                 <InnerGrid>
                   <div>
@@ -294,7 +347,7 @@ const Product = () => {
       </MainBox>
       
       
-    </div>
+     </ProductContainer>
   );
 };
 

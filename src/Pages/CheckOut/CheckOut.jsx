@@ -3,9 +3,27 @@ import {Inputradio,Input3,Div1,Label1,Button,Select,BoxFlex1,RadionBox,TextBox,L
 import logo from '../../assests/download.png'
 import './CheckOut.css'
 import {useNavigate} from 'react-router-dom'
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import './CheckOut.css'
 const CheckOut = () => {
   const navigate=useNavigate()
-  const gotolanding=()=>{
+  // const gotolanding=()=>{
+  //   navigate('/success')
+  // }
+
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  
+
+  const handleToggle = () => {
+    setOpen(!open);
+    
+  };
+  const handlego=()=>{
     navigate('/')
   }
   return (
@@ -133,7 +151,19 @@ const CheckOut = () => {
 
       <p>By clicking the "Place order" button, you acknowledge that your order will be processed and fulfilled by
 FedEx Cross Border and you agree to FedEx Cross Border Terms and Conditions and Privacy Policy.</p>
-         <Button onClick={()=>gotolanding()} >Place Order</Button>         
+
+           <div>
+      {/* <Button >Show backdrop</Button> */}
+         <Button onClick={handleToggle} >Place Order</Button>   
+      <Backdrop
+        sx={{ color: '#fff', cursor: "pointer", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handlego}
+      >
+        <h1>ThankYou For Shopping</h1>
+   
+      </Backdrop>
+    </div>      
     </CheckOutBox>
   )
 }

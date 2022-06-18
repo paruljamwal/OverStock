@@ -191,3 +191,9 @@ export const Customer=styled.div`
   margin:1% 0% 2% 2% ;
   width: 80%;
 `;
+
+
+export const Progress=styled.div` 
+width: 70%;
+height: 30px;
+`;

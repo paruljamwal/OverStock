@@ -26,11 +26,21 @@ import {
   Div,
   Name
 } from "./Navbar.styled";
+import { useEffect } from "react";
+import { useState } from "react";
 const Navbar = () => {
   const navigate=useNavigate()
+  const [count,setCount]=useState()
   const checkout=()=>{
     navigate('/checkout')
+   
   }
+  
+  useEffect(()=>{
+   setCount(localStorage.getItem("count"))
+   },[count])
+
+   
   return (
     <div>
       <Container>
@@ -72,7 +82,7 @@ const Navbar = () => {
               <div> <Name>List</Name> </div>
              </Div>
              <Div>
-              <div><Link to='/cart'> <Img src={cart} /></Link> </div>
+              <div><Link to='/cart'> <Img src={cart} /><span style={{color:"teal", position:"absolute"}} >{count}</span></Link> </div>
               <div> <Name>Cart</Name> </div>
              </Div>
              <Btn onClick={()=>checkout()} >Checkout</Btn>

@@ -9,8 +9,18 @@ gap: 30px;
 
 `;
 
+export const ProductContainer=styled.div` 
+margin-top:0% ;
+
+`;
+
+export const Dabba=styled.div` 
+margin-top:0% ;
+height: 150px;
+`;
+
 export const Head=styled.div`
-margin: 10% 0% 2% 1%;
+margin: 0% 0% 2% 1%;
 font-size:40px;
 
 
@@ -146,7 +156,7 @@ border-radius: 45px;
 `;
 
 export const Black=styled.button` 
-background-color:Black;
+background-color:orange;
 width: 50px;
 height: 50px;
 margin:5px;
@@ -155,11 +165,11 @@ border-radius: 45px;
 `;
 
 export const Blue=styled.button` 
-background-color:blue;
+background-color:whitesmoke;
 width: 50px;
 margin:5px;
 height: 50px;
-border: none;
+border: 1px solid gray;
 border-radius: 45px;
 `;
 
@@ -172,10 +182,11 @@ border: none;
 border-radius: 45px;
 `;
 
-export const Btn=styled.button` 
+export const Btn=styled.option` 
  height: 30px;
  width: 150px;
  margin:2px 4px 5px 55px;
+ cursor: pointer;
  border: 1px solid transparent;
 `;
 
@@ -186,4 +197,13 @@ export const Button=styled.button`
  margin:6px 0px 1px 55px;
  border: 1px solid transparent;
  cursor: pointer;
+`;
+
+export const Select=styled.select` 
+width: 100px;
+height: 40px;
+color: gray;
+border-radius: 4px;
+border:1px solid lightgray;
+margin: 1% 2% 1% 70%;
 `;

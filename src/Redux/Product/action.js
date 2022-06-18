@@ -9,7 +9,13 @@ export const GET_SINGLE_PRODUCT_LOADING="GET_SINGLE_PRODUCT_LOADING"
 export const GET_SINGLE_PRODUCT_SUCCESS="GET_SINGLE_PRODUCT_SUCCESS"
 export const GET_SINGLE_PRODUCT_ERROR="GET_SINGLE_PRODUCT_FALIURE"
 
-const getProducts = (payload)=>(
+export const GET_PAGINATION_PRODUCT_LOADING="GET_PAGINATION_PRODUCT_LOADING"
+export const GET_PAGINATION_PRODUCT_SUCCESS="GET_PAGINATION_PRODUCT_SUCCESS"
+export const GET_PAGINATION_PRODUCT_ERROR="GET_PAGINATION_PRODUCT_FALIURE"
+
+
+
+export const getProducts = (payload)=>(
     {
         type:GET_PRODUCTS_DATA,
         payload:payload
@@ -53,9 +59,9 @@ const singleerrorProducts=(payload)=>({
 
 
 
-export const getDataAPI = (payload)=>(dispatch)=>{
+export const getDataAPI = (page)=>(dispatch)=>{
         dispatch(loadingProduct())  
-        axios.get("https://stockover-backend-api.herokuapp.com/products")
+        axios.get(`https://stockover-backend-api.herokuapp.com/products/?page=${page++}&limit=30`)
         .then((res)=>dispatch(getProducts(res.data.products)))
         .catch((e)=>dispatch(errorProducts(e.data.products)))
     }
