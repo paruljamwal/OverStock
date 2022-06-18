@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 // import Button from "@mui/material/Button";
-import React from "react";
+import React, { useContext } from "react";
 import india from "../../assests/india.png";
 import logo from "../../assests/download.png";
 import search from "../../assests/search.png";
@@ -28,9 +28,11 @@ import {
 } from "./Navbar.styled";
 import { useEffect } from "react";
 import { useState } from "react";
+import { AuthContext } from "../../Context/AuthContext";
 const Navbar = () => {
   const navigate=useNavigate()
   const [count,setCount]=useState()
+  const {isAuth,logout}=useContext(AuthContext)
   const checkout=()=>{
     navigate('/checkout')
    
@@ -40,7 +42,15 @@ const Navbar = () => {
    setCount(localStorage.getItem("count"))
    },[count])
 
-   
+   const handelClick=()=>{
+   if(isAuth){
+    logout()
+    navigate("/")
+   }else{
+    navigate("/sign")
+   }
+   }
+
   return (
     <div>
       <Container>
@@ -75,7 +85,7 @@ const Navbar = () => {
            <RightBox> 
              <Div>
               <div> <Link to='/sign' > <Img src={user}/> </Link></div>
-              <div> <Name>Account</Name> </div>
+              <div> <Name onClick={handelClick}>{isAuth ?"Logout":"Login"}</Name> </div>
              </Div>
              <Div>
               <div><Link to='/like'> <Img src={heart} /> </Link></div>

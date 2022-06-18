@@ -2,7 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import { Head, MainBox, LowerBox, ImgPoster, Para, Blue, GridCard, CardImg, CardBox } from './Kids.styled'
 import "./Kids.css"
+import { AuthContext } from '../../Context/AuthContext'
 const Kids = () => {
+
   const data6=[
     {image:"http://ak1.ostkcdn.com/images/products/17960745/Avenue-Greene-Nola-Mocha-Triple-Bunk-Bed-8637f807-600a-4eaa-88cc-29a8452e6ac5.jpg",name:"Kids Beds"},
     {image:"http://ak1.ostkcdn.com/images/products/22528931/Dinoland-Comforter-Set-83f44770-372f-49cb-bffc-c64e66848a0c.jpg",name:"Kids Comforter Sets"},

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import {
   Flex,
   Login,
@@ -18,12 +18,29 @@ import {
   Create,
 } from "./Sign.style";
 import {useNavigate} from 'react-router-dom'
+import { AuthContext } from "../../Context/AuthContext";
 // import { HEAD, Main, SignBox } from './Sign.style'
-
 const Sign = () => {
+  const [logincred,setLoginCred]=useState({})
   const navigate=useNavigate()
+  const {login}=useContext(AuthContext)
   const gotocheck=()=>{
     navigate('/checkout')
+  }
+
+  const handelChange=(e)=>{
+    const {name,value}=e.target
+    setLoginCred({
+      ...logincred,
+      [name]:value
+    })
+
+  }
+
+  const handelSubmit=(e)=>{
+    e.preventDefault();
+    login()
+
   }
   return (
     <Main>
@@ -76,15 +93,16 @@ const Sign = () => {
         <Signed1></Signed1>
         <Signed>
           <HEAD>Sign In</HEAD>
-
+           <form onSubmit={handelSubmit}>
           <Label>Email Address*</Label>
           <br />
-          <Input type="email" placeholder="Email" />
+          <Input onChange={handelChange}  name="email" type="email" placeholder="Email" />
           <br />
           <Label>Password*</Label>
           <br />
-          <Input type="Password" placeholder="Password" />
+          <Input onChange={handelChange} name="password" type="Password" placeholder="Password" />
           <Login onClick={()=>gotocheck()} >Sign In</Login>
+          </form>
           <p style={{ margin: "20px 0px 0px 70px" }}>Forget your password</p>
         </Signed>
       </SignBox>

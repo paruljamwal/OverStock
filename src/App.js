@@ -21,13 +21,14 @@ import Cart from './Pages/Cart/Cart';
 import Sign from './Pages/Sign/Sign';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import Footer from './Components/Footer/Footer';
-import Success from './Pages/Success/success';
+
 
 
 function App() {
   return (
     <div className="App">
        <Navbar/>
+       
        <Routes>
         <Route exact path='/' element={<LandingPage/>}></Route>
         <Route exact  path='/kids' element={<Kids/>} ></Route>
@@ -38,7 +39,6 @@ function App() {
         <Route exact path='/cart' element={<Cart/>} /> 
         <Route exact path='/sign' element={<Sign/>} />
          <Route path="/checkout" element={<CheckOut/>} />
-         <Route exact path='/success' element={<Success/>}/>
         <Route path='/furniture' element={<Furniture/>}></Route>
         <Route path='/rugs' element={<Rugs/>}></Route>
         <Route path='/decor' element={<Decor/>}></Route>

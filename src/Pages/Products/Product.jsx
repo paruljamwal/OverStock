@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import * as React from 'react';
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+import  { useEffect, useState } from "react";
 import FullStar from "../../assests/FullStar.png";
 import Star from "../../assests/star.png";
 import "./Products.css";
@@ -320,21 +323,9 @@ const Product = () => {
                     <Price>PRICE: {e.price}</Price>
                   </div>
                   <Stars>
-                    <div>
-                      <StarList src={FullStar} />
-                    </div>
-                    <div>
-                      <StarList src={FullStar} />
-                    </div>
-                    <div>
-                      <StarList src={FullStar} />
-                    </div>
-                    <div>
-                      <StarList src={Star} />
-                    </div>
-                    <div>
-                      <StarList src={Star} />
-                    </div>
+                  <Stack spacing={1}>
+                <Rating name="size-large" defaultValue={2} size="large" />
+               </Stack>
                   </Stars>
                   <div>
                     <Name>{e.name}</Name>
