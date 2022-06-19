@@ -25,26 +25,39 @@ medium : https://medium.com/@paruljamwal2000/overstock-com-fc83f58cb9a4
 
 ![Landing](https://user-images.githubusercontent.com/96183163/174477265-f0f036a0-6304-46ff-b096-5dd2147b7671.png)
 
+                                                  
+
 
 ![Lan](https://user-images.githubusercontent.com/96183163/174477269-ce5239b1-0b6b-46b7-a35a-a4f0bac8c460.png)
 
+                                                     
+
+
 ![pro](https://user-images.githubusercontent.com/96183163/174477281-05912f52-ecb8-4c54-8d00-d40758666ea3.png)
+
 
 ![product](https://user-images.githubusercontent.com/96183163/174477292-fcd4170f-1d02-4754-93a5-369bf96f573d.png)
 
+
+
 ![detail](https://user-images.githubusercontent.com/96183163/174477298-6f03b068-d51f-4527-8e35-1c36a7e38128.png)
+
 
 
 ![cartbag](https://user-images.githubusercontent.com/96183163/174477313-08c152a9-01b5-4909-a5eb-3a2e257d3f0f.png)
 
 
+
 ![log](https://user-images.githubusercontent.com/96183163/174477318-badbcfd8-e1a7-49bc-8370-b7ad8dab0b79.png)
+
 
 
 ![pay](https://user-images.githubusercontent.com/96183163/174477320-d3c8365e-6e07-42b0-81fd-65026f0a6716.png)
 
 
+
 ![thank](https://user-images.githubusercontent.com/96183163/174477326-04ecb292-7f49-486f-95c3-10672b0d86e4.png)
+
 
 
 ## End Note
