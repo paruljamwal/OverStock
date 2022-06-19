@@ -13,7 +13,7 @@ margin-bottom: 1%;
 
 export const UpImg=styled.img` 
 width: 200px;
-margin: 4% 40% 1% 40%;
+margin: 8% 40% 1% 40%;
 `;
 
 export const Line=styled.div` 

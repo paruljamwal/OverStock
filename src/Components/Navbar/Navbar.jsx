@@ -1,5 +1,6 @@
 import { Box } from "@mui/system";
 // import Button from "@mui/material/Button";
+import axios from "axios"
 import React, { useContext } from "react";
 import india from "../../assests/india.png";
 import logo from "../../assests/download.png";
@@ -33,6 +34,7 @@ const Navbar = () => {
   const navigate=useNavigate()
   const [count,setCount]=useState()
   const {isAuth,logout}=useContext(AuthContext)
+
   const checkout=()=>{
     navigate('/checkout')
    

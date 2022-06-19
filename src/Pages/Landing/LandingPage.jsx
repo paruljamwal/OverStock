@@ -3,6 +3,7 @@ import { Grid, Limited, MainGrid, Poster, Poster2, MainGrid2, Poster4, MainGrid3
 import './Page.css'
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button'
+import { Link } from "react-router-dom";
 const LandingPage = () => {
   const data = [
     {
@@ -70,7 +71,7 @@ const LandingPage = () => {
    return (
     <div>
       <>
-        <Poster src="https://ak1.ostkcdn.com/img/mxc/05302022-HP-A1-INTL-1400x550.jpg" />
+       <Link to="/kids" ><Poster src="https://ak1.ostkcdn.com/img/mxc/05302022-HP-A1-INTL-1400x550.jpg" /></Link> 
         {/* <Poster1 src="https://ak1.ostkcdn.com/img/mxc/05302022-HP-A1-INTL-1400x550.svg" alt="" /> */}
       </>
 
@@ -80,13 +81,13 @@ const LandingPage = () => {
       <MainGrid>
         {data.map((e) => (
           <Grid>
-            <img className="gridbox" src={e.image} alt="" />
+            <Link to="/kids" > <img className="gridbox" src={e.image} alt="" /></Link>
             <p className="gridName">{e.name}</p>
           </Grid>
         ))}
       </MainGrid>
       <>
-        <Poster2 src="https://ak1.ostkcdn.com/img/mxc/05302022_BedroomFurniture_Desktop.jpg?imwidth=1080" alt="" />
+      <Link to="/kids" >  <Poster2 src="https://ak1.ostkcdn.com/img/mxc/05302022_BedroomFurniture_Desktop.jpg?imwidth=1080" alt="" /></Link>
         {/* <Poster3 src="https://ak1.ostkcdn.com/img/mxc/05302022_BedroomFurniture_Desktopv2.svg?imwidth=3840" ></Poster3> */}
       </> 
       
@@ -94,7 +95,7 @@ const LandingPage = () => {
        <MainGrid2>
         {data2.map((e)=>(
           <div>
-            <img className="gridbox" src={e.image} />
+            <Link to="/kids" > <img className="gridbox" src={e.image} /></Link>
             <p className="gridName">{e.name}</p>
           </div>
         ))}      
@@ -103,7 +104,7 @@ const LandingPage = () => {
       {/* swiper */}
 
       <div>
-        <Poster4  src="https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=120%20120w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=200%20200w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=320%20320w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=400%20400w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=480%20480w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=640%20640w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=750%20750w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=828%20828w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=1080%201080w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=1200%201200w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=1920%201920w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=2048%202048w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=3840%203840w"  alt="" />
+      <Link to="/kids" >  <Poster4  src="https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=120%20120w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=200%20200w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=320%20320w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=400%20400w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=480%20480w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=640%20640w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=750%20750w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=828%20828w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=1080%201080w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=1200%201200w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=1920%201920w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=2048%202048w,%20https://ak1.ostkcdn.com/img/mxc/05302022_SummerDecor_Desktop.jpg?imwidth=3840%203840w"  alt="" /></Link>
       </div>
       <Limited>Overstock Limited Stock</Limited>
       <MainGrid3>
@@ -133,7 +134,7 @@ const LandingPage = () => {
        <Flex>
         {data4.map((e)=>(
           <div className="MainGrid3">
-            <img className="gridbox3"  src={e.image} alt="" />
+               <Link to="/kids" ><img className="gridbox3"  src={e.image} alt="" /></Link> 
              <h3 className="grid3">{e.Way}</h3>
              <p className="grid4" >{e.name}</p>
           </div>
