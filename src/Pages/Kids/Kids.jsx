@@ -74,7 +74,7 @@ const Kids = () => {
          <Link to="/products"><p className='left'>Gifts for Kids</p></Link> 
         </div>
         <div className='rightbox'>
-          <ImgPoster src="https://ak1.ostkcdn.com/img/mxc/Q3_2018_1900x950_030-KidsStore-STATIC.jpg" alt="" />
+         <Link to='/products'><ImgPoster src="https://ak1.ostkcdn.com/img/mxc/Q3_2018_1900x950_030-KidsStore-STATIC.jpg" alt="" /></Link> 
         </div>
 
         </MainBox>
