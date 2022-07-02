@@ -4,12 +4,13 @@ import axios from "axios"
 import React, { useContext } from "react";
 import india from "../../assests/india.png";
 import logo from "../../assests/download.png";
-import search from "../../assests/search.png";
+import search1 from "../../assests/search.png";
 import cart from '../../assests/cart.png'
 import user from '../../assests/user.png'
 import heart from '../../assests/heartb.png'
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Search2 from "./Search";
 import {useNavigate} from 'react-router-dom';
 import {
   Country,
@@ -30,10 +31,16 @@ import {
 import { useEffect } from "react";
 import { useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
+import searchItems from './utils/db'
 const Navbar = () => {
   const navigate=useNavigate()
   const [count,setCount]=useState()
   const {isAuth,logout}=useContext(AuthContext)
+  const [query,setQuery]=useState("");//for searching
+  const [loading,setLoading]=useState(false); //for loading
+  const [suggestion,setSuggestion]=useState([]) // our data in arry of obj format
+  
+
 
   const checkout=()=>{
     navigate('/checkout')
@@ -52,6 +59,24 @@ const Navbar = () => {
     navigate("/sign")
    }
    }
+//  console.log(searchItems)
+    //search bar login 
+
+    useEffect(()=>{
+      if(query===""){
+        setSuggestion([])
+      }
+      else{   
+        // comparing 2 strings if not match return -1 countering === whatever enter in input box...
+        let newList=searchItems.filter(e=>e.name.toLowerCase().indexOf(query) !==-1? true : false
+        ).map((e)=>e.name)
+        setSuggestion(newList)
+        
+      }
+      //make loading false when delete the list
+      setTimeout(()=>setLoading(false),1000);
+    },[query]);
+
 
   return (
     <div>
@@ -80,9 +105,10 @@ const Navbar = () => {
           <Link to="/">
             <Logo src={logo} alt="logo" />
           </Link>
-          <Inputbar placeholder="Search" />
+          <Search2  onChange={(val)=>setQuery(val)} loading={loading} setLoading={setLoading} suggestion={suggestion} />
+          {/* <Inputbar placeholder="Search" /> */}
           <SearchBttn>
-            <Search src={search}></Search>
+            <Search src={search1}></Search>
           </SearchBttn>
            <RightBox> 
              <Div>

@@ -21,6 +21,7 @@ import Cart from './Pages/Cart/Cart';
 import Sign from './Pages/Sign/Sign';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import Footer from './Components/Footer/Footer';
+import SearchItem from './Pages/SearchItem/SearchItem';
 
 
 
@@ -50,6 +51,7 @@ function App() {
         <Route path='/outdoor' element={<Outdoor/>}></Route>
         <Route path='/idea' element={<Ideas/>}></Route>
         <Route path='/sales' element={<Sales/>}></Route>
+        <Route path='/search/:name' element={<SearchItem/>}  />
        </Routes>
        <Footer/>
     </div>
