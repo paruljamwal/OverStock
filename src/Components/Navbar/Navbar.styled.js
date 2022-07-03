@@ -54,7 +54,7 @@ width: 20px;
 export const Smallnav = styled.div`
 margin:3px 0px 1px 43px;
 color: gray;
-font-size: large;
+font-size: 30;
 `;
 
 export const RightBox=styled.div`

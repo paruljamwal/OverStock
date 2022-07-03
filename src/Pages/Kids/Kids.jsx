@@ -67,11 +67,11 @@ const Kids = () => {
       <h1>Kids Store</h1>
       <MainBox>
         <div className='leftbox'>
-         <Link to="/products"> <p className='left'>Baby & Nursery</p></Link>
-         <Link to="/products"><p className='left'>Kids & Toddler Furniture</p></Link> 
-         <Link to="/products"><p className='left'>Kids Toys</p></Link> 
-         <Link to="/products"> <p className='left'>Kids Outdoor Play</p></Link>
-         <Link to="/products"><p className='left'>Gifts for Kids</p></Link> 
+         <Link  style={{textDecoration:"none"}} to="/products"> <p className='left'>Baby & Nursery</p></Link>
+         <Link  style={{textDecoration:"none"}} to="/products"><p className='left'>Kids & Toddler Furniture</p></Link> 
+         <Link  style={{textDecoration:"none"}} to="/products"><p className='left'>Kids Toys</p></Link> 
+         <Link  style={{textDecoration:"none"}} to="/products"> <p className='left'>Kids Outdoor Play</p></Link>
+         <Link  style={{textDecoration:"none"}} to="/products"><p className='left'>Gifts for Kids</p></Link> 
         </div>
         <div className='rightbox'>
          <Link to='/products'><ImgPoster src="https://ak1.ostkcdn.com/img/mxc/Q3_2018_1900x950_030-KidsStore-STATIC.jpg" alt="" /></Link> 

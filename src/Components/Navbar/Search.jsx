@@ -4,7 +4,7 @@ import styled from "styled-components";
 import './Navbar.css'
 const Search2 = ({ loading, setLoading, onChange, suggestion }) => {
   const [inputText, setInputText] = useState("");
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(-1);
   const navigate=useNavigate()
   const handelInput = (e) => {
     setInputText(e.target.value);
