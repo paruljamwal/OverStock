@@ -11,7 +11,7 @@
 
 Original : https://www.OverStock.com/
 
-Clone : https://precious-biscotti-7d48df.netlify.app
+Clone : https://whimsical-hamster-e7693c.netlify.app
 
 medium : https://medium.com/@paruljamwal2000/overstock-com-fc83f58cb9a4
 
