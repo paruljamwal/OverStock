@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-
+import './Navbar.css'
 const Search2 = ({ loading, setLoading, onChange, suggestion }) => {
   const [inputText, setInputText] = useState("");
   const [active, setActive] = useState(0);
@@ -91,7 +91,7 @@ const Search2 = ({ loading, setLoading, onChange, suggestion }) => {
           {suggestion.map((e, index) => (
             <Box key={e.id} onMouseOver={() => setActive(index + 1)}>
           
-           <Link to={`/search/${e}`} > {e} </Link>
+           <Link className="go" to={`/search/${e}`} > {e}</Link>
             </Box>
           ))}
         </SuggestionBox>

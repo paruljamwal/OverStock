@@ -6,3 +6,8 @@
 .link:nth-child(){
     color: rgb(255,31,44);
 }
+
+.go{
+    text-decoration: none;
+    color: black;
+}
